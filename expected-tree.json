@@ -1,0 +1,86 @@
+{
+    "schema_version": "1.0",
+    "pm": "bower",
+    "pm_version_tested": "1.8",
+    "source_file": "bower.json",
+    "manifest": "bower.json",
+    "lockfile": null,
+    "detection_mode": "manifest-and-bower-components",
+    "patterns": ["manual-version-pin", "bower-components-committed"],
+    "notes": "All three direct dependencies are exact-pinned (no semver operator). bower_components/ is committed. Resolved versions confirmed from bower_components/<pkg>/.bower.json on 2026-05-04. backbone@1.6.1 declares underscore >=1.8.3; resolved to 1.13.8. _target in each .bower.json matches the exact pin string for directs, and the upstream constraint for underscore.",
+    "packages": [
+        {
+            "name": "jquery",
+            "artifactId": "jquery",
+            "version": "3.7.1",
+            "version_constraint": "3.7.1",
+            "scope": "runtime",
+            "group": "main",
+            "source": "registry",
+            "direct": true,
+            "children": []
+        },
+        {
+            "name": "backbone",
+            "artifactId": "backbone",
+            "version": "1.6.1",
+            "version_constraint": "1.6.1",
+            "scope": "runtime",
+            "group": "main",
+            "source": "registry",
+            "direct": true,
+            "children": [
+                {
+                    "name": "underscore",
+                    "artifactId": "underscore",
+                    "version": "1.13.8",
+                    "version_constraint": ">=1.8.3",
+                    "scope": "runtime",
+                    "group": "main",
+                    "source": "registry",
+                    "direct": false,
+                    "children": []
+                }
+            ]
+        },
+        {
+            "name": "moment",
+            "artifactId": "moment",
+            "version": "2.30.1",
+            "version_constraint": "2.30.1",
+            "scope": "runtime",
+            "group": "main",
+            "source": "registry",
+            "direct": true,
+            "children": []
+        }
+    ],
+    "total_packages": 4,
+    "direct_count": 3,
+    "transitive_count": 1,
+    "unique_packages": [
+        "jquery:3.7.1",
+        "backbone:1.6.1",
+        "moment:2.30.1",
+        "underscore:1.13.8"
+    ],
+    "mend_detection_expectations": {
+        "all_packages_must_appear": true,
+        "source_for_all": "registry",
+        "no_missing_transitives": true,
+        "flat_layout": true,
+        "parent_chain_inference_required": true,
+        "resolutions_field_used": false,
+        "lockfile_present": false,
+        "bower_components_committed": true,
+        "exact_version_pins_only": true,
+        "constraint_format": "bare_version_no_operator",
+        "failure_modes_exercised": [
+            "Mend reports semver range instead of exact pin (treats '3.7.1' as '^3.7.1')",
+            "underscore missing — backbone transitive not traversed",
+            "Mend ignores .bower.json metadata even when committed in bower_components/",
+            "_target in .bower.json shows exact pin but Mend normalises to a range",
+            "all packages reported as direct (flat layout misread — transitive parent-chain not inferred)"
+        ]
+    }
+}

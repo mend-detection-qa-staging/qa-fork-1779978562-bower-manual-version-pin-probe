@@ -1,0 +1,6 @@
+# Intentionally NOT excluding bower_components/ — committed as probe artifact.
+# This probe exercises the bower-components-committed pattern: Mend UA reads
+# _release, _resolution, and _target from each bower_components/<pkg>/.bower.json.
+
+.DS_Store
+*.log

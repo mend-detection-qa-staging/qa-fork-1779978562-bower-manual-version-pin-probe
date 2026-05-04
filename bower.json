@@ -1,0 +1,11 @@
+{
+  "name": "bower-manual-version-pin-probe",
+  "version": "1.0.0",
+  "description": "Bower probe: manual exact-version pins with bower_components/ committed for .bower.json resolution metadata",
+  "private": true,
+  "dependencies": {
+    "jquery": "3.7.1",
+    "backbone": "1.6.1",
+    "moment": "2.30.1"
+  }
+}
